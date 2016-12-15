@@ -6,15 +6,27 @@
 			* {
 				box-sizing: border-box;
 			}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20a955d... 1st commit
 			#message {
 				width:500px;
 				height:500px;
 				overflow-y: auto;
 				border:2px solid red;
 			}
+<<<<<<< HEAD
 			form {
 				width:500px;
 			}
+=======
+
+			form {
+				width:500px;
+			}
+
+>>>>>>> 20a955d... 1st commit
 			form textarea {
 				max-width:100%;
 				min-width:100%;
@@ -22,15 +34,31 @@
 				padding-left:0.5%;
 				border-radius: 5px;
 				height: 100px;
+<<<<<<< HEAD
 			}
+=======
+
+			}
+
+>>>>>>> 20a955d... 1st commit
 			form button {
 				width:20%;
 				border:2px solid yellow;
 				font-size: 20px;
+<<<<<<< HEAD
 			}
 			#msg {
 				list-style-type: none;
 			}
+=======
+
+			}
+
+			#msg {
+				list-style-type: none;
+			}
+
+>>>>>>> 20a955d... 1st commit
 			#msg li {
 				padding:2px 2px;
 			}
@@ -51,18 +79,30 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
     	var socket = io();
+<<<<<<< HEAD
     	var name;
     	$(document).ready(function(){
     		name = prompt("Please enter your name", "Vishal Sharma");
     	})
     	 $('form').submit(function(){
         socket.emit('chat message', $('#m'.val());
+=======
+    	 $('form').submit(function(){
+        socket.emit('chat message', $('#m').val());
+>>>>>>> 20a955d... 1st commit
         $('#m').val('');
         return false;
       });
       socket.on('chat message', function(msg){
         $('#msg').append($('<li>').text(msg));
+<<<<<<< HEAD
       }); 
     </script>
 	</body>
 </html>
+=======
+      });
+    </script>
+	</body>
+</html>
+>>>>>>> 20a955d... 1st commit
