@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chatbox</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			#message {
+				width:500px;
+				height:500px;
+				overflow-y: auto;
+				border:2px solid red;
+			}
+
+			form {
+				width:500px;
+			}
+
+			form textarea {
+				max-width:100%;
+				min-width:100%;
+				border:2px solid yellow;
+				padding-left:0.5%;
+				border-radius: 5px;
+				height: 100px;
+
+			}
+
+			form button {
+				width:20%;
+				border:2px solid yellow;
+				font-size: 20px;
+
+			}
+
+			#msg {
+				list-style-type: none;
+			}
+
+			#msg li {
+				padding:2px 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+			<div id ="message">
+				<ul id="msg">
+					
+				</ul>
+			</div>
+			<form action="">
+				<textarea id="m" autocomplete="off" placeholder="Enter your message" /></textarea><br>
+				<input type="submit" value="submit">
+			</form>
+			<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+    	var socket = io();
+    	 $('form').submit(function(){
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+      });
+      socket.on('chat message', function(msg){
+        $('#msg').append($('<li>').text(msg));
+      });
+    </script>
+	</body>
+</html>
