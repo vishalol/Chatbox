@@ -2,66 +2,50 @@
 <html>
 	<head>
 		<title>Chatbox</title>
+		<link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet">
 		<style>
 			* {
 				box-sizing: border-box;
 			}
-<<<<<<< HEAD
-=======
-
->>>>>>> 20a955d... 1st commit
 			#message {
 				width:500px;
 				height:500px;
 				overflow-y: auto;
-				border:2px solid red;
+				border:3px solid #FF9900;
+				background-color: #E0E0E0 ;
+				border-radius: 5px;
 			}
-<<<<<<< HEAD
-			form {
-				width:500px;
-			}
-=======
-
 			form {
 				width:500px;
 			}
 
->>>>>>> 20a955d... 1st commit
-			form textarea {
+
+			#m {
 				max-width:100%;
 				min-width:100%;
-				border:2px solid yellow;
+				border:3px solid #FF9933;
 				padding-left:0.5%;
 				border-radius: 5px;
 				height: 100px;
-<<<<<<< HEAD
-			}
-=======
-
-			}
-
->>>>>>> 20a955d... 1st commit
-			form button {
-				width:20%;
-				border:2px solid yellow;
-				font-size: 20px;
-<<<<<<< HEAD
-			}
-			#msg {
-				list-style-type: none;
-			}
-=======
-
 			}
 
 			#msg {
 				list-style-type: none;
 			}
-
->>>>>>> 20a955d... 1st commit
 			#msg li {
-				padding:2px 2px;
+				padding:3px 3px;
+				font-size: 15px;
+				margin: 2px 2px;
+				font-family: 'Arbutus', cursive; 
+				
 			}
+
+			#msg li:nth-child(odd) { color: #FF9933; }
+
+			#msg li:nth-child(even) { color: #FFFF00; }
+
+
+
 		</style>
 	</head>
 
@@ -70,39 +54,28 @@
 				<ul id="msg">
 					
 				</ul>
-			</div>
+			</div><br>
 			<form action="">
 				<textarea id="m" autocomplete="off" placeholder="Enter your message" /></textarea><br>
-				<input type="submit" value="submit">
+				<input type="submit" value="Submit">
 			</form>
 			<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
+        var name;
     	var socket = io();
-<<<<<<< HEAD
-    	var name;
-    	$(document).ready(function(){
-    		name = prompt("Please enter your name", "Vishal Sharma");
-    	})
+    	 $(function(){
+    	 	name = prompt("Please enter your name", "Vishal Sharma");
+    	 });
     	 $('form').submit(function(){
-        socket.emit('chat message', $('#m'.val());
-=======
-    	 $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
->>>>>>> 20a955d... 1st commit
+        socket.emit('chat message',{'na':name,'msg': $('#m').val()} );
         $('#m').val('');
         return false;
       });
-      socket.on('chat message', function(msg){
-        $('#msg').append($('<li>').text(msg));
-<<<<<<< HEAD
-      }); 
-    </script>
-	</body>
-</html>
-=======
+      socket.on('chat message', function(data){
+        $('#msg').append($('<li>').text(data.na+" : "+data.msg));
       });
+
     </script>
 	</body>
 </html>
->>>>>>> 20a955d... 1st commit
