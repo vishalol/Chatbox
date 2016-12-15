@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"border",
+				"border-radius"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
 				"re",
 				"require"
 			],
@@ -40,10 +56,6 @@
 				"margin-top"
 			],
 			[
-				"border",
-				"border-bottom"
-			],
-			[
 				"overflow",
 				"overflow-y"
 			],
@@ -76,7 +88,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1286,
+				"buffer_size": 1664,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -118,6 +130,7 @@
 	],
 	"file_history":
 	[
+		"/home/vishal/untitled.html",
 		"/home/vishal/Chatbox/package.json",
 		"/home/vishal/Documents/practice.html",
 		"/home/vishal/chatboxexample/index.html",
@@ -189,8 +202,8 @@
 						"selection":
 						[
 							[
-								401,
-								401
+								508,
+								508
 							]
 						],
 						"settings":
@@ -210,15 +223,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1286,
+						"buffer_size": 1664,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								619,
-								619
+								1664,
+								1664
 							]
 						],
 						"settings":
@@ -226,7 +239,7 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 585.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

@@ -44,6 +44,11 @@
 
 			#msg li:nth-child(even) { color: #FFFF00; }
 
+            #notifyuser { 
+            	font-size: 12px;
+				margin: 2px 2px;
+				font-family: 'Arbutus', cursive;
+			}
 
 
 		</style>
@@ -54,27 +59,53 @@
 				<ul id="msg">
 					
 				</ul>
-			</div><br>
+				
+			</div>
+			<br>
+
+			<span id="notifyUser"></span><br>
+
 			<form action="">
 				<textarea id="m" autocomplete="off" placeholder="Enter your message" /></textarea><br>
 				<input type="submit" value="Submit">
 			</form>
-			<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
         var name;
     	var socket = io();
+
     	 $(function(){
     	 	name = prompt("Please enter your name", "Vishal Sharma");
     	 });
+
     	 $('form').submit(function(){
         socket.emit('chat message',{'na':name,'msg': $('#m').val()} );
-        $('#m').val('');
-        return false;
-      });
+          $('#m').val('');
+          return false;
+         });
+
       socket.on('chat message', function(data){
         $('#msg').append($('<li>').text(data.na+" : "+data.msg));
       });
+
+      $("textarea").keyup(function(){
+                           notifyTyping();
+                     });
+
+      function notifyTyping() { 
+  var user = name;
+  socket.emit('notifyUser', user);
+}
+
+     socket.on('notifyUser', function(user){
+  var me = name;
+  if(user != me) {
+    $('#notifyUser').text(user + ' is typing ...');
+  }
+  setTimeout(function(){ $('#notifyUser').text(''); }, 5000);;
+});
 
     </script>
 	</body>
