@@ -51,14 +51,18 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
     	var socket = io();
+    	var name;
+    	$(document).ready(function(){
+    		name = prompt("Please enter your name", "Vishal Sharma");
+    	})
     	 $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
+        socket.emit('chat message', "name+$('#m').val()");
         $('#m').val('');
         return false;
       });
       socket.on('chat message', function(msg){
         $('#msg').append($('<li>').text(msg));
-      });
+      }); 
     </script>
 	</body>
 </html>
