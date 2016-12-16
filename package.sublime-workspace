@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-bottom"
+			],
+			[
 				"border",
 				"border-radius"
 			],
@@ -52,10 +56,6 @@
 				"max-width"
 			],
 			[
-				"margin",
-				"margin-top"
-			],
-			[
 				"overflow",
 				"overflow-y"
 			],
@@ -76,19 +76,19 @@
 	"buffers":
 	[
 		{
-			"file": "server.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 523,
+				"buffer_size": 2243,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "index.html",
+			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 1664,
+				"buffer_size": 606,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -130,13 +130,15 @@
 	],
 	"file_history":
 	[
+		"/home/vishal/Documents/app.js",
+		"/home/vishal/Documents/practice.html",
+		"/home/vishal/Chatbox/server.js",
+		"/home/vishal/Chatbox/index.html",
 		"/home/vishal/untitled.html",
 		"/home/vishal/Chatbox/package.json",
-		"/home/vishal/Documents/practice.html",
 		"/home/vishal/chatboxexample/index.html",
 		"/home/vishal/chabox/server.js",
 		"/home/vishal/chabox/main.css",
-		"/home/vishal/Documents/app.js",
 		"/home/vishal/Documents/Chat.js",
 		"/home/vishal/chabox/package.json",
 		"/home/vishal/chatboxexample/main.css",
@@ -186,24 +188,52 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server.js",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 523,
+						"buffer_size": 2243,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								508,
-								508
+								745,
+								745
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1260.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
 							]
 						],
 						"settings":
@@ -215,34 +245,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1664,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1664,
-								1664
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]

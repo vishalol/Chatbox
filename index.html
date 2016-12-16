@@ -44,7 +44,7 @@
 
 			#msg li:nth-child(even) { color: #FFFF00; }
 
-            #notifyuser { 
+            #notifyuser, #update { 
             	font-size: 12px;
 				margin: 2px 2px;
 				font-family: 'Arbutus', cursive;
@@ -55,6 +55,7 @@
 	</head>
 
 	<body>
+	        <span id="update"></span><br>
 			<div id ="message">
 				<ul id="msg">
 					
@@ -78,6 +79,8 @@
 
     	 $(function(){
     	 	name = prompt("Please enter your name", "Vishal Sharma");
+    	 	if(name != ""){
+        socket.emit("join", name);}
     	 });
 
     	 $('form').submit(function(){
@@ -107,6 +110,21 @@
   setTimeout(function(){ $('#notifyUser').text(''); }, 5000);;
 });
 
+ socket.on('join', function(user){
+  var me = name;
+  if(user != me) {
+    $('#update').text(user + ' joined ...');
+  }
+  setTimeout(function(){ $('#update').text(''); }, 5000);;
+}); 
+
+   socket.on('unjoin', function(user){
+  var me = name;
+  if(user != me) {
+    $('#update').text(user + ' left ...');
+  } 
+  setTimeout(function(){ $('#update').text(''); }, 5000);;
+}); 
     </script>
 	</body>
 </html>
