@@ -79,7 +79,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2243,
+				"buffer_size": 2722,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -88,7 +88,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 606,
+				"buffer_size": 764,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -197,15 +197,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2243,
+						"buffer_size": 2722,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								745,
-								745
+								815,
+								815
 							]
 						],
 						"settings":
@@ -213,7 +213,7 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1260.0,
+						"translation.y": 720.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -225,23 +225,23 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 606,
+						"buffer_size": 764,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								278,
-								278
+								483,
+								483
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 11.0,
+						"translation.y": 225.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

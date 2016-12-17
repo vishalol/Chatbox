@@ -3,6 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var people= {};
+users=[];
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname+ '/index.html');
@@ -31,8 +32,15 @@ io.on('connection', function(socket){
   });
 
 	socket.on('join', function(user){
-	   people[socket.id] = user;
+	  if(users.indexOf(user) > -1){
+      socket.emit('userExists', user + ' username is taken! Try some other username.');
+    }
+    else{
+      users.push(user);
+      people[socket.id] = user;
        io.emit('join', user);
+
+    }
 
 	});
 });

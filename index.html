@@ -129,6 +129,11 @@
   } 
   setTimeout(function(){ $('#update').text(''); }, 5000);;
 }); 
+
+   socket.on('userExists', function(data){
+         alert(data);
+  setTimeout(function(){location.reload();}, 1000);
+  });
     </script>
 	</body>
 </html>
