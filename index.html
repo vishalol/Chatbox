@@ -115,6 +115,10 @@
   if(user != me) {
     $('#update').text(user + ' joined ...');
   }
+
+  if(user == me){
+  	$('#update').text(user + ' Welcome!!!');
+  }
   setTimeout(function(){ $('#update').text(''); }, 5000);;
 }); 
 
