@@ -3,217 +3,34 @@
   <head>
     <title>Chatbox</title>
     <link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet">
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      #message {
-        width:500px;
-        height:500px;
-        overflow-y: auto;
-        border:3px solid #FF9900;
-        background-color: #E0E0E0 ;
-        border-radius: 5px;
-      }
-      form {
-        width:500px;
-      }
-
-
-      #m {
-        max-width:100%;
-        min-width:100%;
-        border:3px solid #FF9933;
-        padding-left:0.5%;
-        border-radius: 5px;
-        height: 100px;
-      }
-
-      #msg {
-        list-style-type: none;
-      }
-      #msg li {
-        padding:3px 3px;
-        font-size: 15px;
-        margin: 2px 2px;
-        font-family: 'Arbutus', cursive; 
-        
-      }
-
-      #msg li:nth-child(odd) { color: #FF9933; }
-
-      #msg li:nth-child(even) { color: #FFFF00; }
-
-      #notifyUser, #update, #roomlist, #roomupdate{
-        font-size: 15px;
-        margin: 2px 2px;
-        font-family: 'Arbutus', cursive;
-      }
-
-    </style>
+    <link href="Stylesheet.css" rel="stylesheet" type="text/css">
   </head>
 
   <body>
-      <input type="text" id="roomx" placeholder="Enter room name"><br><br>
-      <input type="button" id="create" value="Create Room" onclick="createRoom()">
-      <input type="button" id="join" value="Join Room" onclick="joinRoom()"><br><br>
-      <p id="roomlist"></p><br>
-
-      <span id="roomupdate"></span><br>
-
-      <span id="update"></span><br>
-
-      <div id ="message">
-        <ul id="msg">
-          
-        </ul>
-      </div><br>
-      <span id="notifyUser"></span><br>
-      <form action="">
-        <textarea id="m" autocomplete="off" placeholder="Enter your message" ></textarea><br>
-        <input type="submit" value="Submit">
-      </form>
-      <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-        var name;
-      var socket = io();
-
-
-       $(function(){
-        name = prompt("Please enter your name", "Vishal Sharma");
-        if(name != ""){
-        socket.emit("join", name);}
-       });
-
-
-
-
-
-       $('form').submit(function(){
-        socket.emit('chat message',{'na':name,'msg': $('#m').val()} );
-        $('#m').val('');
-        return false;
-      });
-
-
-
-
-
-      socket.on('chat message', function(data){
-        $('#msg').append($('<li>').text(data.na+" : "+data.msg));
-      });
-
-
-
+      <div class="main">
+        <div style="padding:0 30%; width:auto;"><input type="text" id="roomx" placeholder="Enter room name" style="height:25px; border-radius: 2px; margin-top: 2px"></div>
+        <br>
+        <div style="padding:0 0 0 25%; width:auto;">
+          <input type="button" id="create" value="Create Room" onclick="createRoom()">
+          <input type="button" id="join" value="Join Room" onclick="joinRoom()">
+        </div>
+        <p id="roomlist"></p><br>
+        <span id="roomupdate"></span><br>
+        <span id="update"></span>
+      </div>
+      <div class="chatBox">
+        <div id ="message">
+          <span id = "chatMsg"></span>
+        </div>
+        <div id="notifyUser"></div>
+        <form id="chat" action="">
+          <textarea id="msg" autocomplete="off" placeholder="Enter your message" ></textarea>
+          <input type="submit" id="sub" value="Submit">
+        </form>  
+      </div>
       
-      $("textarea").keyup(function(){
-                           notifyTyping();
-                     });
-
-
-
-
-      function notifyTyping() { 
-  var user = name;
-  socket.emit('notifyUser', user);
-}
-
-      function createRoom(){
-        var room = $('#roomx').val();
-        $('#roomx').val('');
-        socket.emit('createRoom', room);
-
-      }
-
-      function joinRoom(){
-        
-        var room = $('#roomx').val();
-        $('#roomx').val('');
-        socket.emit('joinRoom', room);
-      }
-
-
-
-
-     socket.on('notifyUser', function(user){
-  var me = name;
-  if(user != me) {
-    $('#notifyUser').text(user + ' is typing ...');
-  }
-  setTimeout(function(){ $('#notifyUser').text(''); }, 5000);;
-});
-
-
-
-
-
-     socket.on('join', function(user){
-  var me = name;
-  if(user != me) {
-    $('#update').text(user + ' joined the server ...');
-  }
-  setTimeout(function(){ $('#update').text(''); }, 5000);;
-}); 
-
-
-
-
-   socket.on('unjoin', function(user){
-  var me = name;
-  if((user.name != me)&&(user.name !=null)){
-    $('#update').text(user.name + ' left the server ...');
-  } 
-  setTimeout(function(){ $('#update').text(''); }, 5000);;
-}); 
-
-
-
-
-  socket.on('userExists', function(data){
-         alert(data);
-  setTimeout(function(){location.reload();}, 1000);
-  });
-
-
-
-  socket.on('roomlist', function(data){
-    document.getElementById("roomlist").innerHTML = Object.getOwnPropertyNames(data);
-  });
-
-
-
-    socket.on('roomcreated', function(data){
-     $('#roomupdate').text(data);
-     $('#create').prop("disabled", true);
-     $('#join').prop("disabled", true);
-  setTimeout(function(){ $('#roomupdate').text(''); }, 5000);;
-    
-}); 
-
-
-
-    socket.on('roomjoined', function(data){
-     $('#roomupdate').text(data);
-     $('#create').prop("disabled", true);
-     $('#join').prop("disabled", true);
-  setTimeout(function(){ $('#roomupdate').text(''); }, 5000);;
-}); 
-
-
-    socket.on('roomupdate', function(data){
-     $('#roomupdate').text(data);
-  setTimeout(function(){ $('#roomupdate').text(''); }, 5000);;
-}); 
-
-
-
-socket.on('roomjoinrequest', function(data){
-         alert(data);
-  });    
-
-
-
-    </script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="RoomChatScript.js"></script>
   </body>
 </html>

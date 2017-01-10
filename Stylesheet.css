@@ -1,0 +1,144 @@
+.chatBox {
+  border-radius: 4px;
+  background: #1f1f49;
+  height: 600px;
+  width:30%;
+  margin-left: 1%;
+  margin: auto;
+}
+
+#message {
+  height:80%;
+  overflow-y: scroll;
+  font-family: "Arbutus";
+  overflow-x: hidden;
+}
+
+form {
+  height:15%;
+  width:100%;
+}
+
+#msg {
+  max-width: 70%;
+  width: 70%;
+  height: 90%;
+  max-height: 90%;
+  background: #727da5;
+  border-radius: 5px;
+  border-color: #1f1f49;
+  font-family: "Arbutus";
+}
+
+#sub {
+  width:20%;
+  margin-left: 1%;
+  background-color: #AEDEF4;
+  color: white;
+  border: none;
+  box-shadow: none;
+  height: 80%;
+  font-weight: 500;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  transform: translateY(-55%); 
+}
+
+#notifyUser {
+  height:5%;
+  font-family: Arbutus;
+  font-color: white;
+  text-align: left;
+}
+
+.arrow_left_chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #727da5;
+  width:auto;
+  max-width: 80%;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color:#727da5;
+  padding: 2%;
+  margin-top: 2%;
+  transform: translateX(13px);
+  clear:both;
+  float:left;
+  height:auto;
+  margin-right:20%;
+}
+
+.arrow_left_chat:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(114, 125, 165, 0);
+  border-right-color: #727da5;
+  border-width: 10px;
+  margin-top: -10px;
+}
+.arrow_right_chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #98acd6;
+  width:auto;
+  max-width: 80%;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color:#98acd6;
+  padding: 2%;
+  margin-top: 2%;
+  transform: translateX(-13px);
+  clear: both;
+  float:right;
+  height:auto;
+  margin-left:20%;
+}
+.arrow_right_chat:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(152, 172, 214, 0);
+  border-left-color: #98acd6;
+  border-width: 10px;
+  margin-top: -10px;
+}
+
+#create, #join {
+  width:100px;
+  margin-left: 1%;
+  background-color: #AEDEF4;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  
+  box-shadow: none;
+  height:30px;
+}
+
+.main {
+  margin: auto;
+  border: 2px solid #98acd6;
+  background-color: #98acd6;
+  border-radius: 5px;
+  width:30%;
+  align-items: center;
+  margin-bottom: 10px;
+
+}

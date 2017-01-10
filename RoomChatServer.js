@@ -3,15 +3,22 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var Room = require('./RoomChatRoom.js');
-var uuid = require('node-uuid');
 var people= {};
 var rooms = {};
-users=[];
+var uuid = require('node-uuid');
 
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname+ '/RoomChatIndex.html');
 
+});
+
+app.get('/Stylesheet.css', function(req,res){
+	res.sendFile(__dirname+ '/Stylesheet.css');
+});
+
+app.get('/RoomChatScript.js', function(req,res){
+	res.sendFile(__dirname+ '/script.js');
 });
 
 http.listen(3000, function(){
@@ -27,9 +34,6 @@ io.on('connection', function(socket){
 	socket.on('disconnect', function(){
 		console.log("a user disconnected");
 		io.emit('unjoin', people[socket.id]);
-		var user = people[socket.id];
-        var index = users.indexOf(user.name);
-        users.splice(index, 1);
 		delete people[socket.id];
 	});
 
@@ -54,14 +58,8 @@ io.on('connection', function(socket){
 
 	socket.on('join', function(user){
 		roomid = null;
-	   if(users.indexOf(user) > -1){
-      socket.emit('userExists', user + ' username is taken! Try some other username.');
-    }
-       else{
-        users.push(user);
         people[socket.id] = { "name":user, "room":roomid }// add "name" : name, "room" : ro
         io.emit('join', user);
-       }
 	});
 
 

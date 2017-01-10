@@ -3,11 +3,20 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var people= {};
-users=[];
+var users = [];
+
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname+ '/index.html');
 
+});
+
+app.get('/Stylesheet.css', function(req,res){
+	res.sendFile(__dirname+ '/Stylesheet.css');
+});
+
+app.get('/script.js', function(req,res){
+	res.sendFile(__dirname+ '/script.js');
 });
 
 http.listen(8080, function(){
@@ -25,11 +34,11 @@ io.on('connection', function(socket){
 	
 	socket.on('chat message', function(msg){
     io.emit('chat message', msg);
-  });
+    });
 
 	socket.on('notifyUser', function(user){
     io.emit('notifyUser', user);
-  });
+    });
 
 	socket.on('join', function(user){
 	  if(users.indexOf(user) > -1){
@@ -39,7 +48,6 @@ io.on('connection', function(socket){
       users.push(user);
       people[socket.id] = user;
        io.emit('join', user);
-
     }
 
 	});

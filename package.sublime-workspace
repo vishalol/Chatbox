@@ -80,20 +80,18 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "/home/vishal/CHESS/chess/public/game.html",
 			"settings":
 			{
-				"buffer_size": 2913,
-				"encoding": "UTF-8",
+				"buffer_size": 720,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "server.js",
+			"file": "/home/vishal/CHESS/chess/chess.js",
 			"settings":
 			{
-				"buffer_size": 972,
-				"encoding": "UTF-8",
+				"buffer_size": 13983,
 				"line_ending": "Unix"
 			}
 		}
@@ -134,12 +132,19 @@
 	],
 	"file_history":
 	[
+		"/home/vishal/CHESS/chess/public/js/room.js",
+		"/home/vishal/Chatbox/RoomChatRoom.js",
+		"/home/vishal/Chatbox/RoomChatServer.js",
+		"/home/vishal/Documents/vishal.html",
+		"/home/vishal/Documents/Stylesheet.css",
+		"/home/vishal/Chatbox/RoomChatIndex.html",
+		"/home/vishal/Chatbox/index.html",
+		"/home/vishal/Chatbox/server.js",
+		"/home/vishal/Chatbox/package.json",
+		"/home/vishal/Chatbox/node_modules/roomChatindex.html",
 		"/home/vishal/Documents/app.js",
 		"/home/vishal/Documents/practice.html",
-		"/home/vishal/Chatbox/server.js",
-		"/home/vishal/Chatbox/index.html",
 		"/home/vishal/untitled.html",
-		"/home/vishal/Chatbox/package.json",
 		"/home/vishal/chatboxexample/index.html",
 		"/home/vishal/chabox/server.js",
 		"/home/vishal/chabox/main.css",
@@ -192,24 +197,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "/home/vishal/CHESS/chess/public/game.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2913,
+						"buffer_size": 720,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2882,
-								2882
+								0,
+								0
 							]
 						],
 						"settings":
@@ -217,27 +222,27 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2070.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "server.js",
+					"file": "/home/vishal/CHESS/chess/chess.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 972,
+						"buffer_size": 13983,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								957,
-								957
+								978,
+								978
 							]
 						],
 						"settings":
@@ -245,10 +250,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
