@@ -54,6 +54,7 @@ form {
 
 .arrow_left_chat {
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -88,6 +89,7 @@ form {
 }
 .arrow_right_chat {
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -124,7 +126,7 @@ form {
   width:100px;
   margin-left: 1%;
   background-color: #AEDEF4;
-  color: white;
+  color: #ffc600;
   border: none;
   border-radius: 3px;
   
