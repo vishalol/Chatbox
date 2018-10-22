@@ -19,7 +19,7 @@ app.get('/script.js', function(req,res){
 	res.sendFile(__dirname+ '/script.js');
 });
 
-http.listen(8080, function(){
+http.listen(5000, function(){
 	console.log("Server running");
 });
 
